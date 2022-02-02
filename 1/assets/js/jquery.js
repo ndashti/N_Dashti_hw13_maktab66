@@ -4,7 +4,7 @@ $(function () {
   const emptyRow = $('.row-tbl').clone();
 
   // ------------Button Action------------------------
-  $('#add').on('click', function () {
+  $('#add').on('click', () => {
     const newRow = emptyRow.clone();
     generateGroupName(newRow);
     $('#tbody-tbl').prepend(newRow);
@@ -12,7 +12,7 @@ $(function () {
     setTotalRowNumber();
   });
 
-  $('#table-data').on('click', '.delete', function () {
+  $('#table-data').on('click', '.delete', () => {
     $(this).parents('tr').detach();
     setTotalRowNumber();
   });
@@ -24,7 +24,7 @@ $(function () {
     console.log(number);
   };
 
-  $('#table-data').on('click', '.clone', function () {
+  $('#table-data').on('click', '.clone',  () => {
     const currentRow = $(this).closest('.row-tbl');
     const clonedRow = currentRow.clone();
     generateGroupName(clonedRow);
@@ -37,7 +37,7 @@ $(function () {
   });
   
   // -----------Radio Status----------------------------
-  $('#table-data').on('change', '.cell-status input', function () {
+  $('#table-data').on('change', '.cell-status input',  () => {
     let status = $(this).val();
     let parentRow = $(this).parents('tr');
     if (status === 'confrimed-status') {
