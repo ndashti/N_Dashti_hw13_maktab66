@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="accordion" class="accordion-container">
+      <h4 class="accordion-title">Accordion Title1</h4>
+      <div class="accordion-content">
+        <p>
+          1-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime
+          recusandae facere illum error officia vero reiciendis neque atque
+          voluptas laudantium quae quo magni ut corrupti ab quasi, quis nemo
+          veniam!
+        </p>
+      </div>
+
+      <h4 class="accordion-title">Accordion Title2</h4>
+      <div class="accordion-content">
+        <p>
+          2-Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+          recusandae aperiam voluptate distinctio praesentium expedita deserunt
+          hic neque, sunt tempore officia facere et? Maxime ratione
+          necessitatibus autem aliquam. At, totam?
+        </p>
+      </div>
+
+      <h4 class="accordion-title">Accordion Title3</h4>
+      <div class="accordion-content">
+        <p>
+          3-Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+          vel excepturi doloribus itaque at maxime a ullam voluptas, recusandae
+          voluptatem animi commodi repellat esse laborum fuga culpa et sit
+          quaerat!
+        </p>
+      </div>
+
+      <h4 class="accordion-title">Accordion Title4</h4>
+      <div class="accordion-content">
+        <p>
+          4-Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+          vel excepturi doloribus itaque at maxime a ullam voluptas, recusandae
+          voluptatem animi commodi repellat esse laborum fuga culpa et sit
+          quaerat!
+        </p>
+      </div>
+    </div>
+
+    <script>
+      $(function () {
+        //------------------------------------------------------
+            $(".accordion-content").css("display", "none");
+
+            $(".accordion-title").click(function () {
+            $(".open").not($(this)).removeClass("open").next().slideUp(300);
+            $(this).toggleClass("open").next().slideToggle(300);
+            });
+
+        //---------------------CSS Style---------------------------------
+
+            $(".accordion-title").css("background-color","#704c5e")
+            $(".accordion-title").css("color","white")
+            $(".accordion-title").css("width","30%")
+            $(".accordion-title").css("padding","7px")
+            $(".accordion-title").css("margin","4px")
+            $(".accordion-content").css("width","30%")
+            $(".accordion-content").css("padding","2px")
+            $(".accordion-content p").css("padding","5px")
+            $(".accordion-content p").css("padding-left","15px")
+      });
+    </script>
+  </body>
+</html>
