@@ -4,7 +4,7 @@ $(function () {
   const emptyRow = $('.row-tbl').clone();
 
   // ------------Button Action------------------------
-  $('#add').on('click', () => {
+  $('#add').on('click', function() {
     const newRow = emptyRow.clone();
     generateGroupName(newRow);
     $('#tbody-tbl').prepend(newRow);
@@ -12,19 +12,19 @@ $(function () {
     setTotalRowNumber();
   });
 
-  $('#table-data').on('click', '.delete', () => {
+  $('#table-data').on('click', '.delete',function() {
     $(this).parents('tr').detach();
     setTotalRowNumber();
   });
 
-  const generateGroupName = (row) => {
+  const generateGroupName = function(row) {
     // const groupName = row.find(':radio').first().attr('name')
     const number = ++rowCount;
     row.find(':radio').attr('name', 'inlineRadioOptions' + number);
     console.log(number);
   };
 
-  $('#table-data').on('click', '.clone',  () => {
+  $('#table-data').on('click', '.clone',  function () {
     const currentRow = $(this).closest('.row-tbl');
     const clonedRow = currentRow.clone();
     generateGroupName(clonedRow);
@@ -37,7 +37,7 @@ $(function () {
   });
   
   // -----------Radio Status----------------------------
-  $('#table-data').on('change', '.cell-status input',  () => {
+  $('#table-data').on('change', '.cell-status input', function () {
     let status = $(this).val();
     let parentRow = $(this).parents('tr');
     if (status === 'confrimed-status') {
@@ -50,7 +50,7 @@ $(function () {
 
 
   // -----------Calc Row number-------------------------
-  const setTotalRowNumber = () => {
+  const setTotalRowNumber = function() {
     const rowCount = $('#table-data >tbody >tr').length;
     $('#total-rows').html(rowCount);
     const countConfrimed = $(
